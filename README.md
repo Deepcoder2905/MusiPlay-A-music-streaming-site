@@ -11,7 +11,6 @@ Musiplay is a feature-rich music application that allows users to listen to musi
 - **Efficient Background Processing:** Leveraging Celery and Redis for handling asynchronous tasks like song processing and notifications.
 - **Caching:** Improved performance using Redis for caching.
 
----
 
 ## Technologies Used
 
@@ -25,7 +24,6 @@ Musiplay is a feature-rich music application that allows users to listen to musi
 - **Vue.js**: A progressive JavaScript framework for building dynamic user interfaces.
 - **HTML/CSS**: For creating a responsive and visually appealing interface.
 
----
 ## Database Schema Overview
 
 The application utilizes **Flask-SQLAlchemy** to define and manage its database models. The schema includes seven tables that establish relationships and organize the core data structures effectively.
@@ -66,7 +64,7 @@ The application utilizes **Flask-SQLAlchemy** to define and manage its database 
   - A `Song` can belong to multiple `Playlist` entries.
   - This relationship is managed via the `Playlist_Song_Table`.
 
----
+
 
 ## Installation
 

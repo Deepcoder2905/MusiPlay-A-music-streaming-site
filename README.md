@@ -9,6 +9,7 @@ Musiplay is a feature-rich music application that allows users to listen to musi
 - **Become an Artist:** Create an artist profile and showcase your talent.
 - **Upload Songs:** Share your music with the world.
 - **Efficient Background Processing:** Leveraging Celery and Redis for handling asynchronous tasks like song processing and notifications.
+- **Caching:** Improved performance using Redis for caching.
 
 ---
 
@@ -23,6 +24,47 @@ Musiplay is a feature-rich music application that allows users to listen to musi
 ### Frontend
 - **Vue.js**: A progressive JavaScript framework for building dynamic user interfaces.
 - **HTML/CSS**: For creating a responsive and visually appealing interface.
+
+---
+## Database Schema Overview
+
+The application utilizes **Flask-SQLAlchemy** to define and manage its database models. The schema includes seven tables that establish relationships and organize the core data structures effectively.
+
+### Tables
+1. **User**  
+   Stores user-related data.
+   
+2. **Role**  
+   Defines various roles that users can have.
+
+3. **RolesUsers**  
+   Establishes a many-to-many relationship between the `User` and `Role` tables to differentiate users based on their roles.
+
+4. **Song**  
+   Represents individual songs.
+
+5. **Album**  
+   Groups songs under a specific album.  
+   - **Relationship**: A one-to-many relationship exists between `Album` (one) and `Song` (many).
+
+6. **Playlist**  
+   Allows users to create playlists.
+
+7. **Playlist_Song_Table**  
+   Manages the many-to-many relationship between `Playlist` and `Song`.
+
+### Key Relationships
+- **RolesUsers Table**:  
+  Connects `User` and `Role` in a many-to-many relationship for role-based access control.
+
+- **Song and Album**:  
+  - A single `Album` can contain multiple `Song` entries.
+  - A `Song` belongs to one `Album`.
+
+- **Playlist and Song**:  
+  - A single `Playlist` can include multiple `Song` entries.
+  - A `Song` can belong to multiple `Playlist` entries.
+  - This relationship is managed via the `Playlist_Song_Table`.
 
 ---
 

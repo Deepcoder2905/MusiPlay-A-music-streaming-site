@@ -9,3 +9,4 @@ flask_excel==0.0.7
 flask_restful==0.3.10
 flask_caching==2.3.0
 gunicorn==20.1.0
+whitenoise==6.5.0

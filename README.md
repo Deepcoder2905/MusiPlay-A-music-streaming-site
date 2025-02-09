@@ -70,7 +70,6 @@ The application utilizes **Flask-SQLAlchemy** to define and manage its database 
 
 ### Prerequisites
 - Python (>= 3.7)
-- Node.js (>= 14)
 - Redis server
 
 ### Steps

@@ -11,7 +11,10 @@ from celery.schedules import crontab
 from tasks import monthly_reminder, daily_reminder
 from cache import cache
 
-###Create the app instance
+from whitenoise import WhiteNoise
+
+app = Flask(__name__,static_folder="static", template_folder="templates")
+app.wsgi_app = WhiteNoise(app.wsgi_app, root='static/')
 
 def create_app():
     app = Flask(__name__)
@@ -55,20 +58,3 @@ def celery_job(sender, **kwargs):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-###let's run the app
-
-if __name__ == '__main__':
-    initialize_sample_data()
-    app.run(debug=True)

@@ -1,4 +1,4 @@
-# MusiPlay: A music streaming site
+# MusiPlay: A Music Player 
 
 Musiplay is a feature-rich music application that allows users to listen to music, create and manage playlists, become an artist, and upload songs. Built with modern web technologies, Musiplay provides a seamless and intuitive interface for music enthusiasts.
 
